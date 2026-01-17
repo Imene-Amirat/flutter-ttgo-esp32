@@ -1,5 +1,8 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+
+// Service responsable de la gestion des préférences locales
+// de l'application à l'aide de SharedPreferences.
 class PreferencesService {
   static const _kBaseUrl = 'base_url';
   static const _kDeviceId = 'device_id';
