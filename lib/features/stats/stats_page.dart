@@ -6,7 +6,7 @@ import 'package:latlong2/latlong.dart';
 class StatsPage extends StatelessWidget {
   const StatsPage({super.key});
 
-  // adapte si ton deviceId change
+  //adapte si ton deviceId change
   static const String deviceId = 'ttgo-01';
 
   CollectionReference<Map<String, dynamic>> _eventsCol() {
@@ -23,8 +23,7 @@ class StatsPage extends StatelessWidget {
         .snapshots();
   }
 
-  //  Parsing helpers
-
+  // Parsing helpers
   String _extractType(Map<String, dynamic> data) {
     // Dans ton Firestore, type est dans payload.type
     final payload = data['payload'];

@@ -5,23 +5,23 @@ import '../data/storage/preferences_service.dart';
 import '../data/api/esp32_api_client.dart';
 import '../data/repository/ttgo_repository.dart';
 
-//  Preferences
+// Preferences
 final prefsProvider = Provider<PreferencesService>(
   (ref) => PreferencesService(),
 );
 
-//  Base URL
+//Base URL
 final baseUrlProvider = FutureProvider<String>((ref) async {
   return ref.read(prefsProvider).getBaseUrl();
 });
 
-//  API Client
+//API Client
 final apiClientProvider = FutureProvider<Esp32ApiClient>((ref) async {
   final baseUrl = await ref.watch(baseUrlProvider.future);
   return Esp32ApiClient(baseUrl: baseUrl);
 });
 
-//  Repository
+//Repository
 final ttgoRepoProvider = FutureProvider<TTGORepository>((ref) async {
   final api = await ref.watch(apiClientProvider.future);
   return TTGORepository(api);

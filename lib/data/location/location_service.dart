@@ -1,5 +1,8 @@
 import 'package:geolocator/geolocator.dart';
 
+
+// Service responsable de la récupération de la position géographique
+// de l'utilisateur en utilisant le package Geolocator.
 class LocationService {
   Future<Position?> tryGetPosition() async {
     try {

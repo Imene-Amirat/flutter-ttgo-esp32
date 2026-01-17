@@ -1,5 +1,5 @@
 class Esp32Values {
-  final double? temperatureC; // temp_c
+  final double? temperatureC; // temp_C
   final int? thermRaw; // therm_raw
   final int? lightRaw; // light_raw
   final bool? ledOn; // led
@@ -40,7 +40,7 @@ class Esp32Values {
       return null;
     }
 
-    // ✅ PRIORITÉ AUX VRAIES CLÉS DE TON API /api/values
+    // PRIORITÉ AUX VRAIES CLÉS DE TON API /api/values
     final tempC = _num(
       json['temp_c'] ??
           json['temperature_c'] ??
